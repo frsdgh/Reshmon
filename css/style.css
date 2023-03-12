@@ -1,0 +1,351 @@
+@charset "UTF-8";
+@import url(../fonts/fontiran.css);
+/* ---------------------- reset -------------------- */
+
+ul,
+li,
+div,
+figure,
+img,
+a,
+span,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: inherit
+}
+
+li,
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* ---------------------- typography -------------------- */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: dana, tahoma !important;
+    direction: rtl;
+}
+
+body{
+    --white: #FFF;
+    --gray-bg: #F7F9FA;
+    --gray-disable: #ECECEC;
+    --gray-txt: hsl(0, 0%, 58%);
+    --gray-obj: hsl(210, 6%, 93%);
+    --black: #323232;
+    --black-trans-20: rgba(50, 50, 50, 0.2);
+    --black-trans-60: rgba(0, 0, 0, 0.6);
+    --orange-trans-32: rgba(255, 123, 0, 0.32);
+    --blue: #29A0F5;
+    --blue-darker: #0D81D4;
+    --blue-trans-8: rgba(41, 160, 245, 0.08);
+    --blue-trans-48: rgba(41, 160, 245, 0.48);
+    --logo-yellow: #FFDB63;
+    --notifi-yellow: #E9B522;
+    --light-green: #B6FFB5;
+    --darker-green: #4AAC48;
+    --logo-brown: #534741;
+    --purple: #9747FF;
+    --orange: #B95900;
+    --warning-red: #B3261E;
+
+    /* --font-body-LG: 1rem 'danaVF' , dana; */
+}
+
+.container {
+    margin: 0 16px;
+}
+
+main.conLogBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 32px 16px;
+    gap: 16px;
+}
+
+button {
+    padding: 0.89em 1.14em;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+button.blue {
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: 500;
+}
+
+button.white {
+    background-color: var(--white);
+    border: .5px solid var(--gray-obj);
+    color: var(--black);
+    font-weight: 500;
+}
+
+button i {
+    display: block;
+    background-repeat: no-repeat;
+}
+
+button i.twenty {
+    width: 20px;
+    height: 20px;
+}
+
+i.user-square {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.1166 18.0166C14.3833 18.2333 13.5166 18.3333 12.5 18.3333H7.49997C6.4833 18.3333 5.61663 18.2333 4.8833 18.0166C5.06663 15.85 7.29163 14.1416 9.99997 14.1416C12.7083 14.1416 14.9333 15.85 15.1166 18.0166Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.4998 1.66699H7.49984C3.33317 1.66699 1.6665 3.33366 1.6665 7.50033V12.5003C1.6665 15.6503 2.6165 17.3753 4.88317 18.017C5.0665 15.8503 7.2915 14.142 9.99984 14.142C12.7082 14.142 14.9332 15.8503 15.1165 18.017C17.3832 17.3753 18.3332 15.6503 18.3332 12.5003V7.50033C18.3332 3.33366 16.6665 1.66699 12.4998 1.66699ZM9.99984 11.8086C8.34984 11.8086 7.0165 10.467 7.0165 8.81701C7.0165 7.16701 8.34984 5.83366 9.99984 5.83366C11.6498 5.83366 12.9832 7.16701 12.9832 8.81701C12.9832 10.467 11.6498 11.8086 9.99984 11.8086Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.9833 8.81636C12.9833 10.4664 11.6499 11.808 9.99994 11.808C8.34994 11.808 7.0166 10.4664 7.0166 8.81636C7.0166 7.16636 8.34994 5.83301 9.99994 5.83301C11.6499 5.83301 12.9833 7.16636 12.9833 8.81636Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    /*--- https://yoksel.github.io/url-encoder/ ---*/
+}
+
+/* .conSearchMainPage {
+    margin-top: 20vh;
+} */
+
+.conSearchMainPage {
+    margin-top: 4rem;
+}
+
+img.logo {
+    position: relative;
+    top: 16px;
+    animation-name: logoTransition;
+    animation-duration: .8s;
+    animation-delay: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.conLogo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.conLogo::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    -ms-transform: scale(70%, 70%);
+    transform: scale(70%, 70%);
+    z-index: -1;
+    display: block;
+    width: 77px;
+    height: 77px;
+    background-color: rgba(250, 210, 96, 0.48);
+    filter: blur(9px);
+    -webkit-filter: blur(9px);
+}
+
+.capital-txt {
+    text-transform: uppercase;
+    letter-spacing: .25em;
+}
+
+@keyframes logoTransition {
+
+    0% {
+        top: 16px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+form.search {
+    display: flex;
+    margin: 46px 0;
+}
+
+::placeholder {
+    color: var(--gray-txt);
+    font-size: 0.87rem;
+    font-family: inherit;
+    font-weight: normal;
+}
+
+::-webkit-input-placeholder {
+    color: var(--gray-txt);
+    font-size: 0.87rem;
+    font-family: inherit;
+    font-weight: normal;
+}
+
+form div.conInputs {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: var(--gray-bg);
+    border-radius: 8px;
+    border: .5px solid var(--gray-obj);
+    padding: 0.62em 24px 0.62em 0.62em;
+    height: 3.44em;
+    gap: 1rem;
+}
+
+input {
+    flex: 1;
+    background-color: transparent;
+    border: 0px;
+    color: var(--black);
+}
+
+form div.conInputs:focus-within {
+    background-color: var(--white);
+}
+
+.conIcon {
+    display: flex;
+    align-items: center;
+}
+
+.btnIcon {
+    padding: .5rem;
+    border: .5px solid var(--gray-obj);
+    border-radius: 8px;
+    background-color: var(--white);
+    margin: auto 0;
+}
+
+input[type="search"]:focus {
+    outline-style: none;
+    box-shadow: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+
+    /* Remove default */
+    -webkit-appearance: none;
+      
+    /* Now your own custom styles */
+    width: 24px;
+    height: 24px;
+    margin: auto 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.16992 14.8299L14.8299 9.16992' stroke='%23323232' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.8299 14.8299L9.16992 9.16992' stroke='%23323232' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z' stroke='%23323232' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    /*--- https://yoksel.github.io/url-encoder/ ---*/
+}
+
+footer {
+    padding: 32px 0;
+    color: var(--gray-txt);
+    margin-top: 128px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+footer > div {
+    padding: 0 8px;
+}
+
+.font-body-SM {
+    font-family: inherit;
+    font-size: .75rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+}
+
+.font-MD-Re {
+    font-family: inherit;
+    font-size: .81rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+}
+
+.font-MD2-Med {
+    font-family: inherit;
+    font-size: 0.93rem;
+    font-weight: 500;
+    line-height: 1.42em;
+}
+
+.font-LG-Med {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.conTitleWithIcon {
+    display: flex;
+    gap: 8px;
+}
+
+footer .conTitleWithIcon {
+    margin-bottom: 13px;
+}
+
+footer .icnCon {
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+    padding: 12px 14px;
+}
+/* ---------------------- layout -------------------- */
+
+/* .container {
+    margin: 0 auto
+} */
+
+/* @media screen and (min-width: 720px) {
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    #sec-two-box {
+        margin-right: 0
+    }
+    html {
+        font-size: 85%
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #sec-two-box {
+        margin-right: 0
+    }
+    html {
+        font-size: 85%
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #sec-two-box {
+        margin-right: .8em
+    }
+    .container {
+        max-width: 1200px;
+    }
+    html {
+        font-size: 100%
+    }
+} */
