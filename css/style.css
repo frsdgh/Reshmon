@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(../fonts/fontiran.css);
+
 /* ---------------------- reset -------------------- */
 
 ul,
@@ -32,6 +33,18 @@ a {
 button {
     border: 0;
     background-color: transparent;
+}
+
+label {
+    display: none;
+}
+
+*:empty {
+    display: none;
+}
+
+p:empty {
+    display: none;
 }
 
 *{
@@ -71,8 +84,38 @@ body{
     --purple: #9747FF;
     --orange: #B95900;
     --warning-red: #B3261E;
+}
 
-    /* --font-body-LG: 1rem 'danaVF' , dana; */
+/* .font-SM-Re {
+    font:  normal .75rem/1.5rem inherit;
+} */
+
+.font-SM-Re {
+    font-family: inherit;
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.font-MD-Re {
+    font-family: inherit;
+    font-size: .81rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+}
+
+.font-MD2-Med {
+    font-family: inherit;
+    font-size: 0.93rem;
+    font-weight: 500;
+    line-height: 1.42em;
+}
+
+.font-LG-Med {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .container {
@@ -83,7 +126,7 @@ main.conLogBtn {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 32px 16px;
+    margin: 24px 0 24px 16px;
     gap: 16px;
 }
 
@@ -119,6 +162,14 @@ button i {
 button i.twenty {
     width: 20px;
     height: 20px;
+}
+
+button.white:hover {
+    border-color: var(--gray-txt);
+}
+
+button.blue:hover {
+    background-color: var(--blue-darker);
 }
 
 i.user-square {
@@ -182,8 +233,32 @@ img.logo {
 }
 
 form.search {
-    display: flex;
+    display: block;
     margin: 46px 0;
+    position: relative;
+}
+
+form.search ul#appearLoading {
+    position: absolute;
+    display: none;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+}
+
+form.search li#conLoading{
+    padding: 14px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+}
+
+form.search ul,li {
+    background-color: var(--gray-bg);
+}
+
+form.search ul {
+    border: .5px solid var(--gray-obj);
 }
 
 ::placeholder {
@@ -200,7 +275,7 @@ form.search {
     font-weight: normal;
 }
 
-form div.conInputs {
+form div#conInputs {
     flex: 1;
     display: flex;
     align-items: center;
@@ -212,15 +287,15 @@ form div.conInputs {
     gap: 1rem;
 }
 
+form div#conInputs:focus-within {
+    background-color: var(--white);
+}
+
 input {
     flex: 1;
     background-color: transparent;
     border: 0px;
     color: var(--black);
-}
-
-form div.conInputs:focus-within {
-    background-color: var(--white);
 }
 
 .conIcon {
@@ -254,6 +329,24 @@ input[type="search"]::-webkit-search-cancel-button {
     /*--- https://yoksel.github.io/url-encoder/ ---*/
 }
 
+.loader {
+    border: 1.5px solid var(--gray-obj);
+    border-radius: 50%;
+    border-top: 1.5px solid var(--black);
+    width: 24px;
+    height: 24px;
+    animation: spin .8s linear infinite;
+}
+
+.disFlex {
+    display: flex;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 footer {
     padding: 32px 0;
     color: var(--gray-txt);
@@ -265,34 +358,6 @@ footer {
 
 footer > div {
     padding: 0 8px;
-}
-
-.font-body-SM {
-    font-family: inherit;
-    font-size: .75rem;
-    font-weight: normal;
-    line-height: 1.5rem;
-}
-
-.font-MD-Re {
-    font-family: inherit;
-    font-size: .81rem;
-    font-weight: normal;
-    line-height: 1.5rem;
-}
-
-.font-MD2-Med {
-    font-family: inherit;
-    font-size: 0.93rem;
-    font-weight: 500;
-    line-height: 1.42em;
-}
-
-.font-LG-Med {
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: normal;
 }
 
 .conTitleWithIcon {
@@ -310,6 +375,7 @@ footer .icnCon {
     gap: 12px;
     padding: 12px 14px;
 }
+
 /* ---------------------- layout -------------------- */
 
 /* .container {
