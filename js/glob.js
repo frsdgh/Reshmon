@@ -7,18 +7,18 @@
 //   document.getElementById("userSearchBtn").style.display = "flex";
 // }
 
-function displaySearchUser() {
-  userSearchBtn = document.getElementById("userSearchBtn");
-  if (userSearchBtn.style.display === 'none') {
-    userSearchBtn.style.display = 'flex'
-  } else {
-    userSearchBtn.style.display = 'none'
-  }
-}
-
 // function displaySearchUser() {
-//   document.getElementById("userSearchBtn").classList.toggle("disFlex");
+//   userSearchBtn = document.getElementById("userSearchBtn");
+//   if (userSearchBtn.style.display === 'none') {
+//     userSearchBtn.style.display = 'flex'
+//   } else {
+//     userSearchBtn.style.display = 'none'
+//   }
 // }
+
+function displaySearchUser() {
+  document.getElementById("userSearchBtn").classList.toggle("disNone");
+}
 
 function appearLoading(value) {
   if (value == 0) {
